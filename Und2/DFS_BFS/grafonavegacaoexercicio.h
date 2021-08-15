@@ -15,9 +15,9 @@ class GrafoListaAdj {
 	vector<vector<pair<int, int>>> arestas;
 
 	/*DONE*
-    * A principio nao temos nenhuma ordenacao usando os rotulos.
-    * Portanto, usaremos busca linear.
-    **/
+	* A principio nao temos nenhuma ordenacao usando os rotulos.
+	* Portanto, usaremos busca linear.
+	**/
 	int obterIndiceVertice(string rotuloVertice) {
 		int index;
 		auto it = find(vertices.begin(), vertices.end(), rotuloVertice);
@@ -32,22 +32,22 @@ class GrafoListaAdj {
 	}
 
 	/*DOING*
-    * O argumento indicesVerticesVisitados serve para controlar quais
-    * vertices ja foram visitados.
-    * Lembrando que DFS eh uma funcao recursiva.
-    **/
+	* O argumento indicesVerticesVisitados serve para controlar quais
+	* vertices ja foram visitados.
+	* Lembrando que DFS eh uma funcao recursiva.
+	**/
 	void dfs(string rotuloVOrigem, bool* indicesVerticesVisitados) {
 		//IMPLEMENTAR
 	}
 
    public:
 	/*DONE*
-    * Lembrem-se:
-    *      1) nao podemos inserir vertices com mesmo rotulo
-    *      2) toda vez que inserirmos um novo vertice, precisaremos
-    *     inserir um vetor para representar as conexoes daquele
-    *     vertice na lista de adjacencias
-    **/
+	* Lembrem-se:
+	*	  1) nao podemos inserir vertices com mesmo rotulo
+	*	  2) toda vez que inserirmos um novo vertice, precisaremos
+	*	 inserir um vetor para representar as conexoes daquele
+	*	 vertice na lista de adjacencias
+	**/
 	void inserirVertice(string rotuloVertice) {
 		if (obterIndiceVertice(rotuloVertice) == -1) {
 			vertices.push_back(rotuloVertice);
@@ -60,9 +60,9 @@ class GrafoListaAdj {
 	}
 
 	/**
-    * Sempre que o grafo for nao ponderado, adicionaremos o peso 1,
-    * por conveniencia.
-    **/
+	* Sempre que o grafo for nao ponderado, adicionaremos o peso 1,
+	* por conveniencia.
+	**/
 	void inserirArestaDirecionada(string rotuloVOrigem, string rotuloVDestino) {
 		inserirArestaDirecionada(rotuloVOrigem, rotuloVDestino, 1);
 	}
@@ -78,9 +78,9 @@ class GrafoListaAdj {
 	}
 
 	/*DONE*
-    * Inserir uma aresta entre rotuloVOrigem eh rotuloVDestino com o peso
-    * especificado.
-    **/
+	* Inserir uma aresta entre rotuloVOrigem eh rotuloVDestino com o peso
+	* especificado.
+	**/
 	void inserirArestaDirecionada(string rotuloVOrigem, string rotuloVDestino, int peso) {
 		int orig = obterIndiceVertice(rotuloVOrigem);
 		int dest = obterIndiceVertice(rotuloVDestino);
@@ -95,9 +95,9 @@ class GrafoListaAdj {
 	}
 
 	/*DONE*
-    * Verifica se vertice rotuloVOrigem eh vertice rotuloVDestino seo
-    * conectados (vizinhos).
-    **/
+	* Verifica se vertice rotuloVOrigem eh vertice rotuloVDestino seo
+	* conectados (vizinhos).
+	**/
 	bool saoConectados(string rotuloVOrigem, string rotuloVDestino) {
 		int orig = obterIndiceVertice(rotuloVOrigem);
 		int dest = obterIndiceVertice(rotuloVDestino);
@@ -118,36 +118,36 @@ class GrafoListaAdj {
 	}
 
 	/*DOING*
-    * Verifica se ha algum caminho entre vertice rotuloVOrigem e 
-    * vertice rotuloVDestino.
-    * A melhor forma de fazer isto eh reusando a funcao dfs.
-    **/
+	* Verifica se ha algum caminho entre vertice rotuloVOrigem e 
+	* vertice rotuloVDestino.
+	* A melhor forma de fazer isto eh reusando a funcao dfs.
+	**/
 	bool haCaminho(string rotuloVOrigem, string rotuloVDestino) {
 		return true;
 	}
 
 	/*DOING*
-    * Muda os rotulos do vertices dos diferentes componentes para
-    * nomes que representam cores.
-    * Dica: procura componentes partindo do vertice v0 ou v1, em ordem
-    * crescente (mas voce pode usar outra ordem se desejar). 
-    * Retorna a quantidade de componentes.
-    * A melhor forma de fazer isto eh reusando a funcao dfs.
-    **/
+	* Muda os rotulos do vertices dos diferentes componentes para
+	* nomes que representam cores.
+	* Dica: procura componentes partindo do vertice v0 ou v1, em ordem
+	* crescente (mas voce pode usar outra ordem se desejar). 
+	* Retorna a quantidade de componentes.
+	* A melhor forma de fazer isto eh reusando a funcao dfs.
+	**/
 	int colorir() {
 		return -1;
 	}
 
 	/*DOING*
-    * Usa a abordagem de navegacao BFS para listar as distancias
-    * entre o vertice rotuloVOrigem e cada um dos demais vertices.
-    * A funcao BFS consegue listar a menor distancia entre um vertice
-    * e os demais se o grafo for NAO-PONDERADO.
-    * Retorna um vetor de inteiros com a quantidade de arestas 
-    * (distancia), o vertice rotuloVOrigem e cada um dos demais vertices.
-    * Nao eh uma funcao recursiva. 
-    * eh necesserio utilizar a ED fila.
-    **/
+	* Usa a abordagem de navegacao BFS para listar as distancias
+	* entre o vertice rotuloVOrigem e cada um dos demais vertices.
+	* A funcao BFS consegue listar a menor distancia entre um vertice
+	* e os demais se o grafo for NAO-PONDERADO.
+	* Retorna um vetor de inteiros com a quantidade de arestas 
+	* (distancia), o vertice rotuloVOrigem e cada um dos demais vertices.
+	* Nao eh uma funcao recursiva. 
+	* eh necesserio utilizar a ED fila.
+	**/
 	int* bfs(string rotuloVOrigem) {
 		//IMPLEMENTAR
 	}
