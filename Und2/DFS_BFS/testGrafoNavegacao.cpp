@@ -61,6 +61,7 @@ TEST_F(GrafoListaAdjNavegacaoTest, haCaminho) {
 	//embora nao exista v10 no grafo da url descrita, nos adicionamos v10 (linha 50)
 	EXPECT_FALSE(grafo->haCaminho("v1", "v10"));
 	EXPECT_FALSE(grafo->haCaminho("v10", "v5"));
+	grafo->print();
 }
 
 TEST_F(GrafoListaAdjNavegacaoTest, colorirGrafo1Comp) {
@@ -75,6 +76,7 @@ TEST_F(GrafoListaAdjNavegacaoTest, colorirGrafo1Comp) {
 		//dos vertices devem estar iguais
 		EXPECT_EQ(grafo->getVertices().at(i - 1), grafo->getVertices().at(i));
 	}
+	//grafo->print();
 }
 
 /* Funcao auxiliar para construir o seguinte grafo grafo de 5 componentes:
@@ -151,6 +153,7 @@ TEST_F(GrafoListaAdjNavegacaoTest, colorirGrafo5Comp) {
 	EXPECT_NE(grafo->getVertices().at(12), corComp2);
 	EXPECT_NE(grafo->getVertices().at(12), corComp3);
 	EXPECT_NE(grafo->getVertices().at(12), corComp4);
+	//grafo->print();
 }
 
 TEST_F(GrafoListaAdjNavegacaoTest, bfsGrafo1CompNaoPonderado) {
@@ -180,6 +183,7 @@ TEST_F(GrafoListaAdjNavegacaoTest, bfsGrafo1CompNaoPonderado) {
 	EXPECT_EQ(distancias[7], 3);
 	EXPECT_EQ(distancias[8], 4);
 	free(distancias);
+	grafo->print();
 }
 
 TEST_F(GrafoListaAdjNavegacaoTest, bfsGrafo5CompNaoPonderado) {
@@ -269,6 +273,7 @@ TEST_F(GrafoListaAdjNavegacaoTest, bfsGrafo5CompNaoPonderado) {
 	EXPECT_EQ(distancias[16], 0);
 	EXPECT_EQ(distancias[17], 0);
 	free(distancias);
+	grafo->print();
 }
 
 int main(int argc, char** argv) {
