@@ -43,10 +43,10 @@ class GrafoListaAdj {
    public:
 	/*DONE*
     * Lembrem-se:
-    *       1) nao podemos inserir vertices com mesmo rotulo
-    *       2) toda vez que inserirmos um novo vertice, precisaremos
-    *          inserir um vetor para representar as conexoes daquele
-    *          vertice na lista de adjacencias
+    *      1) nao podemos inserir vertices com mesmo rotulo
+    *      2) toda vez que inserirmos um novo vertice, precisaremos
+    *     inserir um vetor para representar as conexoes daquele
+    *     vertice na lista de adjacencias
     **/
 	void inserirVertice(string rotuloVertice) {
 		if (obterIndiceVertice(rotuloVertice) == -1) {
