@@ -72,7 +72,7 @@ class TabelaHash {
 
 			while (top->getProx() != NULL) {
 				if (top->getChave() == c) {
-					cout << "Cahve existente." << endl;
+					cout << "Chave existente." << endl;
 					return;
 				}
 				top = top->getProx();
@@ -231,8 +231,9 @@ class TabelaHash {
 		for (int i = 0; i < qtde_buckets; i++){
 			Tupla<Chave, Valor>* top = tabela[i];
 			while (top != NULL){
-				delete top;
-				top = top->getProx();
+				Tupla<Chave, Valor>* temp = top;
+				delete top; 
+				top = temp->getProx();
 			}
 			tabela[i] = NULL;
 		}
