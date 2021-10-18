@@ -232,8 +232,8 @@ class TabelaHash {
 			Tupla<Chave, Valor>* top = tabela[i];
 			while (top != NULL){
 				Tupla<Chave, Valor>* temp = top;
-				delete top; 
-				top = temp->getProx();
+				top = top->getProx();
+				delete temp;
 			}
 			tabela[i] = NULL;
 		}
